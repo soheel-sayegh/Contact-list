@@ -1,0 +1,101 @@
+<title>{{title}}</title>
+
+<div class="container">
+     <div class="row">
+            <form class="col-md-12 contact-form"  action="/new-contact" method="POST" enctype="multipart/form-data">
+                    <h1 class="text-primary Create-h1">Create a new contact</h1>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username:</label>
+                      <input type="text" class="form-control" id="Username" name='name'>
+                      <small id="emailHelp" class="form-text text-muted">plase type your Username</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address:</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" name='email'>
+                      <small id="emailHelp" class="form-text text-muted">Well never share your email with anyone else</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Upload:</label>
+                       <div class="custom-file">
+                          <input name='avatar' type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose your picture</label>
+                        </div>
+                    </div>
+                  
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                  </form> 
+
+     </div>
+     <hr>
+     
+     
+       <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 mb-5">
+        
+        {{#each contactsArr}}
+        <div class="col mb-4">
+        <div class="card ">
+          <img class="card-img-top" src="/uploads/{{this.avatar}}" alt="Card image cap">
+          <div class="card-body ">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.email}}</p>
+          </div>
+          <div class="card-footer d-flex justify-content-around bg-secondary">
+            <form action="/delete-contact/{{this.id}}" method="POST"><button type="submit" class="delete-btn"><i class="far fa-trash-alt"></i></button></form>
+
+            <form><button class="mass-btn"><i class="far fa-envelope"></i></button></form>
+
+              <button type="button" onclick="setEdit('{{this.id}}','{{this.avatar}}','{{this.name}}','{{this.email}}')" class="edit-btn" data-toggle="modal" data-target="#exampleModal">
+                <i class="far fa-edit"></i>
+              </button>
+            
+          </div>
+        </div>
+        </div>
+        {{/each}}  
+      </div> 
+     
+ </div> 
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div> <img class="userImg" src="" alt=""></div>
+        <h5 class="name modal-title" id="exampleModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="container">
+              <div class="row">
+                  <form class="col-md-12 contact-form " id="editForm" method="POST"  enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username:</label>
+                      <input type="text" class="name form-control" id="Username" name='name'>
+                      <small id="emailHelp" class="form-text text-muted">plase type your new Username</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address:</label>
+                      <input type="email" class="form-control email" id="exampleInputEmail1" name='email'>
+                      <small id="emailHelp" class="form-text text-muted">Well never share your email with anyone else</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Upload:</label>
+                      <div class="custom-file">
+                          <input name='avatar' type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose your new picture</label>
+                        </div>
+                    </div>
+                    
+                        <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    
+                  </form> 
+              </div>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+

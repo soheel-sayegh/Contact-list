@@ -1,0 +1,91 @@
+body{
+    background: linear-gradient(0deg,rgb(0, 0, 0),#262626);
+  min-height: 100vh;
+ }
+h1{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+    height: 80px;
+    font-size: 50px; 
+
+    
+    
+}
+.contact-form{
+    padding: 20px;
+    -webkit-box-shadow: 2px 2px 46px -12px rgba(255,255,255,1);
+    -moz-box-shadow: 2px 2px 46px -12px rgba(255,255,255,1);
+    box-shadow: 2px 2px 46px -12px rgba(255,255,255,1);
+    margin-bottom: 20px
+}
+.Create-h1{
+    font-size: 300%;
+    font-weight: bold;
+    text-shadow:
+     0 1px 0 rgb(238, 225, 221),
+     0 1px 0 rgb(197, 184, 180),
+     0 3px 0 rgb(185, 173, 169),
+     0 4px 0 rgb(175, 169, 167),
+     0 5px 0 rgb(128, 122, 120),
+     0 6px 1px rgb(199, 171, 161),
+     0 0 5px hsl(15,20%,60%),
+     0 1px 3px hsl(15,20%,58%),
+     0 3px 5px rgb(172, 150, 143),
+     0 5px 10px hsl(15,20%,54%),
+     0 10px 10px rgb(173, 171, 171),
+     0 15px 15px rgb(155, 150, 148);
+}
+label{
+    font-weight: bold;
+    font-size: 20px;
+    color: white
+}
+i{
+    font-size: 30px;
+}
+.delete-btn{
+    color: red;
+    background-color: transparent;
+    border: none
+}
+a .fa-envelope{
+    color: orange
+}
+.mass-btn{
+    color: orange;
+    background-color: transparent;
+    border: none
+}
+.edit-btn{
+    color:white ;
+    background-color: transparent;
+    border: none
+}
+.prof-img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%
+}
+.card-title{
+    font-weight: bold
+}
+
+.modal-title{
+    color: black;
+    font-weight: bold;
+    font-size: 40px
+
+}
+.modal-body label{ 
+color: black
+}
+.userImg{
+    height: 100px;
+    width: 100px;
+    border-radius: 50% ;
+    float: left;
+    margin-right: 20px
+    
+}
