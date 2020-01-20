@@ -6,7 +6,7 @@ const path = require('path')
 const multer =  require('multer');
 const jimp = require('jimp');
 const fs = require('fs');
-let fileName;
+var fileName = 'avatar.jpg';
 
 
 
